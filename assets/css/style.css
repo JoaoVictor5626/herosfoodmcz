@@ -1587,59 +1587,98 @@ body.menu-open .menu-overlay {
   color: var(--muted);
 }
 
-blockquote {
-  margin: 20px 15px 0;
-  box-shadow: 3px 3px 15px 3px rgba(105, 0, 0, .40);
-}
-
-/* Configuração para Tablets (telas a partir de 768px) */
-@media (min-width: 768px) {
-  blockquote {
-    margin: 50px 0 0;
-    box-shadow: 5px 5px 25px 5px rgba(105, 0, 0, .40);
-  }
-}
-
-/* Configuração para Desktops (telas a partir de 990px) */
-@media (min-width: 990px) {
-  blockquote {
-    margin: 100px 0 0;
-  }
-}
-
+/* =============================================
+   DEPOIMENTO / CITAÇÃO DO DONO (BLOCKQUOTE)
+   ============================================= */
 .story blockquote {
   position: relative;
-  /* Torna o blockquote a âncora para o ícone */
-  padding: 1.6rem;
-  padding-top: 2.2rem;
-  border-radius: 30px;
-  color: #fff;
-  background: var(--red-800);
-  font: italic 700 clamp(1.1rem, 3vw, 1.45rem)/1.55 var(--font-display);
-  border-left: 4px solid var(--yellow);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0 0;
+  padding: 2.2rem 2rem 1.8rem 2rem;
+  border-radius: 24px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #a80000 0%, #610000 100%);
+  border-left: 5px solid var(--yellow, #ffc107);
+  box-shadow: 0 14px 35px rgba(105, 0, 0, 0.45);
+  width: min(100% - 2rem, 640px);
+  overflow: visible; /* Permite que o ícone se projete suavemente no topo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Ícone de Aspas Flutuante */
+/* Ícone de Aspas Flutuante Perfeitamente Centralizado */
 .story-icon {
   position: absolute;
-  top: -1.5rem;
-  left: 2.5rem;
-  width: 4rem;
-  height: 4rem;
+  top: -1.4rem;
+  left: 1.8rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  
+  /* Centralização perfeita em Grid */
   display: grid;
   place-items: center;
-  padding: 0px 10px 0px 0px;
-  border-radius: 50%;
-  color: var(--yellow);
-  font-size: 70px;
-  background: var(--red-800);
+  
+  border-radius: 16px;
+  color: #700000;
+  background: var(--yellow, #ffc107);
+  font-size: 2.8rem;
+  font-family: Georgia, serif;
   font-weight: 900;
-  z-index: 1;
+  
+  /* Ajuste fino para compensar a métrica natural do glifo de aspas */
+  line-height: 0;
+  padding-top: 1.3rem; 
+  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  user-select: none;
+}
+
+/* Conteúdo da Citação */
+.blockquote-content p {
+  margin: 0;
+  font-family: var(--font-display, inherit);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  line-height: 1.55;
+  color: #ffffff;
 }
 
 .story blockquote cite {
   display: block;
-  margin-top: .6rem;
-  font: 400 .82rem/1.4 var(--font-body);
+  margin-top: 0.8rem;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--yellow, #ffc107);
+  letter-spacing: 0.02em;
+}
+
+/* Adaptação Responsiva */
+@media (max-width: 576px) {
+  .story blockquote {
+    padding: 2rem 1.4rem 1.4rem 1.4rem;
+    width: 100%;
+  }
+
+  .story-icon {
+    left: 1.2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .story blockquote {
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 990px) {
+  .story blockquote {
+    margin-top: 3.5rem;
+  }
 }
 
 .filters {
