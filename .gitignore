@@ -1,1 +1,10 @@
+# Configurações do editor
 .vscode/
+
+# Arquivos invisíveis e temporários do Sistema Operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs de erro locais
+*.log
