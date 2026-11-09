@@ -2664,9 +2664,9 @@ body.menu-open .menu-overlay {
   opacity: 0;
   filter: blur(10px);
   transform: translateY(80px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, filter, transform;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -2689,8 +2689,8 @@ body.menu-open .menu-overlay {
 .reveal-right {
   opacity: 0;
   transform: translateX(125px);
-  transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -2700,8 +2700,8 @@ body.menu-open .menu-overlay {
 .reveal-top {
   opacity: 0;
   transform: translateY(-60px);
-  transition: opacity 2s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
