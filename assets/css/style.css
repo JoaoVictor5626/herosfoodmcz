@@ -2695,6 +2695,23 @@ body.menu-open .menu-overlay {
 }
 
 /* -------------------------------------------------------------------------- */
+/* 4. SURGIMENTO DE CIMA PARA BAIXO (TOP)                                     */
+/* -------------------------------------------------------------------------- */
+.reveal-top {
+  opacity: 0;
+  transform: translateY(-60px);
+  transition: opacity 2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* ESTADO VISÍVEL (DISPARADO PELO JS) */
+.reveal-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------------------------------------------------------------- */
 /* ESTADO VISÍVEL (DISPARADO PELO JS)                                         */
 /* -------------------------------------------------------------------------- */
 .reveal-on-scroll.is-visible {

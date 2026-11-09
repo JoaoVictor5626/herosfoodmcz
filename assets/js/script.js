@@ -254,8 +254,8 @@
   /* SISTEMA DE REVELAÇÃO GERAL (SCROLL REVEAL & HERO LOAD)                     */
   /* -------------------------------------------------------------------------- */
   function setupScrollReveal() {
-    // Seleciona todos os elementos de revelação na página
-    const revealElements = document.querySelectorAll('.reveal-on-scroll, .reveal-left, .reveal-right');
+    // Adicionado .reveal-top aos seletores
+    const revealElements = document.querySelectorAll('.reveal-on-scroll, .reveal-left, .reveal-right, .reveal-top');
 
     if (!revealElements.length) return;
 
@@ -281,7 +281,7 @@
     }, observerOptions);
 
     revealElements.forEach(el => {
-      // Se o elemento estiver dentro da Hero, revela imediatamente no carregamento
+      // Se o elemento estiver dentro da Hero (ou for o header no topo), revela imediatamente no carregamento
       if (el.closest('.hero')) {
         requestAnimationFrame(() => el.classList.add('is-visible'));
         return;
