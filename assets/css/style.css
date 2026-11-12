@@ -2961,3 +2961,21 @@ section .flex *,
     min-height: 550px;
   }
 }
+
+/* Funciona do celular até 48rem (768px) */
+@media (max-width: 48rem) {
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Acima de 48rem (desktop) fica um em cada canto */
+@media (min-width: 48.01rem) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
