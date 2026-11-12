@@ -2419,20 +2419,176 @@ body.menu-open .menu-overlay {
   color: var(--red-800);
   font-weight: 500;
 }
+/* ==========================
+   SEÇÃO DE CONTATO (CONTACT)
+   ========================== */
+.contact {
+  background: var(--soft);
+}
 
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-cards article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.35rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 5px solid var(--yellow);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-cards article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.contact-cards article > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 10px;
+  background-color: #fef2f2;
+  color: var(--red-800);
+  font-size: 1.25rem;
+  margin-bottom: 0.45rem;
+}
+
+.contact-cards h3 {
+  margin: 0.25rem 0 0.55rem;
+}
+
+.contact-cards p {
+  margin-bottom: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.contact-cards p b {
+  color: #374151;
+}
+
+.card-action {
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+/* Pílula de status arredondada e discreta (Card Funcionamento) */
+.status-discreto {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.3px;
+}
+
+.status-discreto::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.status-discreto.aberto {
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.status-discreto.fechado {
+  background-color: #fee2e2;
+  color: var(--red-800);
+  border: 1px solid #fecaca;
+}
+
+/* Lista de horários (Card Funcionamento) */
+.horarios-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.horarios-lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.horarios-lista li:last-child {
+  border-bottom: none;
+}
+
+.horarios-lista .dia,
+.horarios-lista .hora {
+  white-space: nowrap;
+}
+
+.horarios-lista .dia {
+  font-weight: 500;
+}
+
+.horarios-lista li.hoje {
+  background-color: #fef2f2;
+  border-radius: 6px;
+  border-bottom: none;
+}
+
+.horarios-lista li.hoje .dia,
+.horarios-lista li.hoje .hora {
+  color: var(--red-800);
+  font-weight: 700;
+}
+
+.horarios-lista li.fechado .hora {
+  color: var(--red-800);
+  font-weight: 500;
+}
+
+/* Link do Instagram com gradiente */
 .link-instagram-gradient {
   text-decoration: none;
   display: inline-block;
   color: var(--muted);
 
-  /* Gradiente invertido: Tom mais escuro -> Amarelo Base -> Bloco Visível de Amarelo Base */
   background: linear-gradient(to right, #d4a017 0%, var(--yellow) 50%, #fff 50%);
   background-size: 200% 100%;
-
-  /* Começa em 100% para exibir apenas a cor sólida inicialmente */
   background-position: 100% 0%;
 
-  /* Prepara o recorte do texto */
   -webkit-background-clip: text;
   background-clip: text;
 
@@ -2440,11 +2596,8 @@ body.menu-open .menu-overlay {
 }
 
 .link-instagram-gradient:hover {
-  /* Deixa o texto transparente para revelar o gradiente */
   -webkit-text-fill-color: transparent;
   color: transparent;
-
-  /* Move para 0%, fazendo o gradiente entrar vindo da esquerda */
   background-position: 0% 0%;
 }
 
@@ -2455,6 +2608,7 @@ body.menu-open .menu-overlay {
 .map-container {
   margin: 2rem 0 0;
   padding: 1.35rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-left: 5px solid var(--yellow);
   border-radius: var(--radius-sm);
   background: #fff;
@@ -2468,7 +2622,6 @@ body.menu-open .menu-overlay {
   border: 0;
   border-radius: var(--radius-sm);
 }
-
 
 /* ===================================
    SEÇÃO FINAL CTA (CHAMADA PARA AÇÃO)
