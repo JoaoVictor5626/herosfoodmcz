@@ -250,6 +250,39 @@
       });
     });
 
+  /* ------------------------------------------------- */
+  /* STATUS DE FUNCIONAMENTO EM TEMPO REAL (EM MACEIÓ) */
+  /* ------------------------------------------------- */
+  document.addEventListener("DOMContentLoaded", () => {
+    const badge = document.getElementById("status-loja");
+    if (!badge) return;
+
+    const agora = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Maceio" }));
+    const dia = agora.getDay(); // 0 = Domingo, 1..5 = Seg-Sex, 6 = Sábado
+    const hora = agora.getHours();
+
+    let aberto = false;
+    let seletorDia = "";
+
+    if (dia >= 1 && dia <= 5) {
+      aberto = hora >= 10 && hora < 19;
+      seletorDia = '[data-dia="1-5"]';
+    } else if (dia === 6) {
+      aberto = hora >= 10 && hora < 17;
+      seletorDia = '[data-dia="6"]';
+    } else {
+      seletorDia = '[data-dia="0"]';
+    }
+
+    const linhaHoje = document.querySelector(`.horarios-lista li${seletorDia}`);
+    if (linhaHoje) {
+      linhaHoje.classList.add("hoje");
+    }
+
+    badge.textContent = aberto ? "Aberto agora" : "Fechado agora";
+    badge.classList.add(aberto ? "aberto" : "fechado");
+  });
+  
   /* -------------------------------------------------------------------------- */
   /* SISTEMA DE REVELAÇÃO GERAL (SCROLL REVEAL & HERO LOAD)                     */
   /* -------------------------------------------------------------------------- */
