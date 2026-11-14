@@ -1007,7 +1007,7 @@ body.menu-open .menu-overlay {
    ============================= */
 .hero-carousel {
   position: relative;
-  max-width: 31rem;
+  max-width: 45rem;
   width: 100%;
   margin-inline: auto;
 }
