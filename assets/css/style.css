@@ -2626,31 +2626,73 @@ body.menu-open .menu-overlay {
 /* ===================================
    SEÇÃO FINAL CTA (CHAMADA PARA AÇÃO)
    =================================== */
-.final-cta {
-  padding: clamp(3rem, 8vw, 6rem) 1.5rem;
-  color: #ffffff;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
+.final-cta { 
+  padding: clamp(3rem, 8vw, 6rem) 1.5rem; 
+  color: #ffffff; 
+  text-align: center; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 1.5rem; 
+  position: relative; 
+  overflow: hidden; 
 
-  position: relative;
-  overflow: hidden;
+  /* --- GRID PONTILHADO COM GRADIENTE MAIS CLARO --- */ 
+  background-color: var(--red-900); 
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 2px), 
+    linear-gradient(135deg, var(--red-900) 0%, #6c0409 100%); 
+  background-size: 24px 24px, 100% 100%; 
+  background-position: 0px 0px, 0% 0%; 
+  animation: moverPontinhos 4s linear infinite; 
+} 
 
-  /* --- GRID PONTILHADO COM GRADIENTE MAIS CLARO --- */
-  background-color: var(--red-900);
-  background-image:
-    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 2px),
-    linear-gradient(135deg, var(--red-900) 0%, #6c0409 100%);
-  background-size: 24px 24px, 100% 100%;
+.final-cta > *:not(.final-cta__blob) { 
+  position: relative; 
+  z-index: 1; 
+} 
 
-  /* Posição inicial: pontos em 0 0, gradiente vermelho estático em 0 0 */
-  background-position: 0px 0px, 0% 0%;
+/* Estilos compartilhados de cor e brilho para ficarem idênticas */
+.final-cta__blob { 
+  position: absolute; 
+  pointer-events: none; 
+  border-radius: 50%; 
+  z-index: 0; 
+  background: 
+    radial-gradient(circle, transparent 45%, rgba(255, 230, 0, 0.08) 100%),
+    linear-gradient(rgba(255, 230, 0, 0.05), rgba(255, 230, 0, 0.05)),
+    var(--red-900);
+  border: 1.5px solid rgba(255, 230, 0, 0.09);
+} 
 
-  /*Chama a animação: 8 segundos, velocidade constante (linear) e infinita */
-  animation: moverPontinhos 4s linear infinite;
+/* Bola superior direita opaca para bloquear os pontilhados */ 
+.final-cta__blob--1 { 
+  width: clamp(210px, 38vw, 350px); 
+  height: clamp(210px, 38vw, 350px); 
+  top: clamp(-120px, -10vw, -70px); 
+  right: clamp(-80px, -8vw, -50px); 
+} 
+
+/* Bola inferior esquerda opaca para bloquear os pontilhados */ 
+.final-cta__blob--2 { 
+  width: clamp(170px, 30vw, 320px); 
+  height: clamp(170px, 30vw, 320px); 
+  bottom: clamp(-80px, -8vw, -50px); 
+  left: clamp(-60px, -6vw, -40px); 
+}
+
+/* Ajuste sutil de recuo para telas pequenas */
+@media (max-width: 768px) {
+  .final-cta__blob--1 {
+    top: -85px;
+    right: -65px;
+  }
+
+  .final-cta__blob--2 {
+    bottom: -65px;
+    left: -50px;
+  }
 }
 
 /* --- KEYFRAMES PARA O LOOP PERFEITO --- */
