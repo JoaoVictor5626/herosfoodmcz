@@ -2837,7 +2837,7 @@ body.menu-open .menu-overlay {
   gap: 1.25rem;
   margin-top: 2.5rem;
   padding-top: 1.25rem;
-  padding-bottom: 4.5rem; /* Evita conflito com o botão flutuante do WhatsApp no celular */
+  padding-bottom: 1.5rem; /* Evita conflito com o botão flutuante do WhatsApp no celular */
   border-top: 1px solid rgba(255, 255, 255, .2);
 }
 
@@ -2883,6 +2883,11 @@ body.menu-open .menu-overlay {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 0;
+  }
+}
+@media (max-width: 768px) {
+  .btn-voltar-topo {
+    margin-top: .5rem;
   }
 }
 
