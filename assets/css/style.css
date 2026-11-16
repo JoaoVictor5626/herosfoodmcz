@@ -2631,7 +2631,7 @@ body.menu-open .menu-overlay {
   position: relative; 
   overflow: hidden; 
 
-  /* --- GRID PONTILHADO COM GRADIENTE MAIS CLARO --- */ 
+  /* ----- GRID PONTILHADO ----- */ 
   background-color: var(--red-900); 
   background-image: 
     radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 2px), 
@@ -2640,6 +2640,19 @@ body.menu-open .menu-overlay {
   background-position: 0px 0px, 0% 0%; 
   animation: moverPontinhos 4s linear infinite; 
 } 
+
+/* -------- LOOP -------- */
+@keyframes moverPontinhos {
+  0% {
+    background-position: -40px -20px, 0% 0%;
+  }
+
+  100% {
+    /* Move os pontos em diagonal exatamente o tamanho do background-size (24px) */
+    /* O gradiente vermelho mapeado em 0% 0% fica totalmente parado ao fundo */
+    background-position: 24px 24px, 0% 0%;
+  }
+}
 
 .final-cta > *:not(.final-cta__blob) { 
   position: relative; 
@@ -2676,10 +2689,8 @@ body.menu-open .menu-overlay {
   bottom: clamp(-80px, -8vw, -50px); 
   left: clamp(-60px, -6vw, -40px); 
   animation: flutuarBlob2 10s ease-in-out infinite;
-  animation-delay: -5s
+  animation-delay: -5s;
 }
-
-/* --- KEYFRAMES DE MOVIMENTO SUTIL --- */
 
 /* Movimento suave para o canto superior direito */
 @keyframes flutuarBlob1 {
@@ -2713,19 +2724,6 @@ body.menu-open .menu-overlay {
   .final-cta__blob--2 {
     bottom: -65px;
     left: -50px;
-  }
-}
-
-/* --- KEYFRAMES PARA O LOOP PERFEITO --- */
-@keyframes moverPontinhos {
-  0% {
-    background-position: -40px -20px, 0% 0%;
-  }
-
-  100% {
-    /* Move os pontos em diagonal exatamente o tamanho do background-size (24px) */
-    /* O gradiente vermelho mapeado em 0% 0% fica totalmente parado ao fundo */
-    background-position: 24px 24px, 0% 0%;
   }
 }
 
