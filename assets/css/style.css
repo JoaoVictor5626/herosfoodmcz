@@ -2657,6 +2657,7 @@ body.menu-open .menu-overlay {
     linear-gradient(rgba(255, 230, 0, 0.05), rgba(255, 230, 0, 0.05)),
     var(--red-900);
   border: 1.5px solid rgba(255, 230, 0, 0.09);
+  will-change: transform; /* Melhora a fluidez da animação */
 } 
 
 /* Bola superior direita opaca para bloquear os pontilhados */ 
@@ -2665,6 +2666,7 @@ body.menu-open .menu-overlay {
   height: clamp(210px, 38vw, 350px); 
   top: clamp(-120px, -10vw, -70px); 
   right: clamp(-80px, -8vw, -50px); 
+  animation: flutuarBlob1 10s ease-in-out infinite;
 } 
 
 /* Bola inferior esquerda opaca para bloquear os pontilhados */ 
@@ -2673,6 +2675,32 @@ body.menu-open .menu-overlay {
   height: clamp(170px, 30vw, 320px); 
   bottom: clamp(-80px, -8vw, -50px); 
   left: clamp(-60px, -6vw, -40px); 
+  animation: flutuarBlob2 10s ease-in-out infinite;
+  animation-delay: -5s
+}
+
+/* --- KEYFRAMES DE MOVIMENTO SUTIL --- */
+
+/* Movimento suave para o canto superior direito */
+@keyframes flutuarBlob1 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    /* Move levemente para dentro/baixo e expande 4% */
+    transform: translate3d(-12px, 14px, 0) scale(1.04);
+  }
+}
+
+/* Movimento suave para o canto inferior esquerdo (em contra-tempo) */
+@keyframes flutuarBlob2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    /* Move levemente para dentro/cima e expande 5% */
+    transform: translate3d(14px, -12px, 0) scale(1.05);
+  }
 }
 
 /* Ajuste sutil de recuo para telas pequenas */
