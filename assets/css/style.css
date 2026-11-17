@@ -333,12 +333,25 @@ p {
 }
 
 .button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   color: var(--ink);
   background: var(--yellow);
 }
 
+.button-primary svg {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
 .button-primary:hover {
   background: #fff36b;
+}
+
+.button-primary:hover svg {
+  transform: scale(1.1) rotate(-4deg);
 }
 
 /* ============================
@@ -920,7 +933,6 @@ body.menu-open .menu-overlay {
   animation: desenharLinha 2.0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
 }
 
-
 /* Regra da Animação */
 @keyframes desenharLinha {
   from {
@@ -936,8 +948,7 @@ body.menu-open .menu-overlay {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1.1rem;
-  /* Espaçamento padrão em telas maiores */
+  gap: 1.1rem; /* Espaçamento padrão em telas maiores */
   margin-top: 2rem;
 }
 
@@ -946,8 +957,7 @@ body.menu-open .menu-overlay {
   .hero-actions {
     padding-top: 1rem;
     justify-content: center;
-    row-gap: 2rem;
-    /* Aumenta o espaçamento vertical apenas após a quebra */
+    row-gap: 2rem; /* Aumenta o espaçamento vertical apenas após a quebra */
   }
 }
 
@@ -959,8 +969,7 @@ body.menu-open .menu-overlay {
 
 /* Quando passa o mouse no LINK, a SETA se move para a direita */
 .hero-actions .whatsapp-link:hover span {
-  transform: translateX(3px);
-  /* Move para a direita */
+  transform: translateX(3px); /* Move para a direita */
 }
 
 .hero-carousel {
