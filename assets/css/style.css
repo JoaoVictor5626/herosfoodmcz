@@ -374,9 +374,10 @@ p {
   background: var(--yellow);
 }
 
-/* Garante o alinhamento do texto com o ícone do WhatsApp */
+/* Garante o alinhamento do texto com o ícone */
 .card-link.whatsapp-link,
-.text-link.whatsapp-link {
+.text-link.whatsapp-link,
+.text-link.card-action {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -384,14 +385,16 @@ p {
 
 /* Prepara o ícone SVG para a animação */
 .card-link.whatsapp-link svg,
-.text-link.whatsapp-link svg {
+.text-link.whatsapp-link svg,
+.text-link.card-action svg {
   flex-shrink: 0;
   transition: transform 0.25s ease;
 }
 
 /* Aplica o mesmo movimento ao passar o mouse */
 .card-link.whatsapp-link:hover svg,
-.text-link.whatsapp-link:hover svg {
+.text-link.whatsapp-link:hover svg,
+.text-link.card-action:hover svg {
   transform: scale(1.1) rotate(-4deg);
 }
 
