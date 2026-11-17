@@ -374,6 +374,27 @@ p {
   background: var(--yellow);
 }
 
+/* Garante o alinhamento do texto com o ícone do WhatsApp */
+.card-link.whatsapp-link,
+.text-link.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Prepara o ícone SVG para a animação */
+.card-link.whatsapp-link svg,
+.text-link.whatsapp-link svg {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+/* Aplica o mesmo movimento ao passar o mouse */
+.card-link.whatsapp-link:hover svg,
+.text-link.whatsapp-link:hover svg {
+  transform: scale(1.1) rotate(-4deg);
+}
+
 .button-whatsapp {
   color: #fff;
   background: #20ba5a;
