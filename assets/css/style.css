@@ -2793,28 +2793,44 @@ body.menu-open .menu-overlay {
 }
 
 .links-rapidos a {
+  /* display: inline-flex; */
+  align-items: center;
+  gap: 0.35rem;
   font-family: ui-rounded, 'Arial Rounded MT Bold', 'Segoe UI', sans-serif;
   text-decoration: none;
-
-  /* Cria uma linha usando gradiente de fundo */
-  background-image: linear-gradient(var(--yellow), var(--yellow));
-  background-repeat: no-repeat;
-
-  /* Define a espessura da linha (2px) e a posição (colada embaixo) */
-  background-size: 0% 2px;
-  background-position: left bottom;
-
-  /* Adiciona a animação do background-size junto com as suas outras transições */
-  transition: background-size 0.4s ease, 0.3s ease, box-shadow 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .links-rapidos a:hover {
   color: var(--yellow);
   transform: translateY(-1px);
   box-shadow: var(--shadow-sm);
+}
 
-  /* Faz o background (linha) expandir da esquerda para a direita até 100% */
+/* A linha amarela agora fica restrita apenas à largura do texto */
+.links-rapidos a span {
+  background-image: linear-gradient(var(--yellow), var(--yellow));
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-position: left bottom;
+  padding-bottom: 2px; /* Dá um respiro sutil entre as letras e a linha */
+  transition: background-size 0.4s ease;
+}
+
+.links-rapidos a:hover span {
   background-size: 100% 2px;
+}
+
+/* Animação exclusiva do ícone SVG */
+.links-rapidos .icone-seta {
+  width: 0.85em;
+  height: 0.85em;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.links-rapidos a:hover .icone-seta {
+  transform: translate(2px, -2px);
 }
 
 .siga-nos-icones {
